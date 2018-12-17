@@ -13,24 +13,44 @@ namespace TransactionForm4
 {
     public partial class Form1 : Form
     {
-        List<Names> Info = new List<Names>();
+        List<Names> Names = new List<Names>();
+        List<Cities> City = new List<Cities>();
         public Form1()
         {
             InitializeComponent();
-            UpdateInfo();
+        }
+        private void CityButton_Click(object sender, EventArgs e)
+        {
+            CityDataAccess db2 = new CityDataAccess();
+            City = db2.GetCity(TextBox.Text);
+            UpdateInfo2();
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
             NamesDataAccess db = new NamesDataAccess();
-            Info = db.GetNames(TextBox.Text);
-            UpdateInfo();
+            Names = db.GetNames(TextBox.Text);
+            UpdateInfo1();
         }
 
-        public void UpdateInfo()
+
+
+        public void UpdateInfo1()
         {
-            ListBox.DataSource = Info;
+            ListBox.DataSource = Names;
             ListBox.DisplayMember = "FullName";
+        }
+
+        public void UpdateInfo2()
+        {
+            ListBox.DataSource = City;
+            ListBox.DisplayMember = "DisplayCity";
+        }
+
+        private void ClearCache_Click(object sender, EventArgs e)
+        {
+
+            UpdateInfo2();
         }
     }
 }

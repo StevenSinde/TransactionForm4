@@ -17,7 +17,7 @@ namespace TransactionForm4
             List<Names> Reader = new List<Names>();
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["IM"].ConnectionString))
             {
-                Reader = connection.Query<Names>($"SELECT FirstName, LastName FROM Customers WHERE ID = '{id}'").ToList();
+                Reader = connection.Query<Names>($"SELECT FirstName, LastName FROM Customers1 WHERE CustomerID = '{id}'").ToList();
                 return Reader;
             }
         }

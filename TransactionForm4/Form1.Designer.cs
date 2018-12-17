@@ -31,15 +31,17 @@
             this.SearchButton = new System.Windows.Forms.Button();
             this.ListBox = new System.Windows.Forms.ListBox();
             this.TextBox = new System.Windows.Forms.TextBox();
+            this.CityButton = new System.Windows.Forms.Button();
+            this.ClearCache = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(182, 91);
+            this.SearchButton.Location = new System.Drawing.Point(159, 90);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(75, 23);
             this.SearchButton.TabIndex = 0;
-            this.SearchButton.Text = "Search";
+            this.SearchButton.Text = "Get Names";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
@@ -53,16 +55,38 @@
             // 
             // TextBox
             // 
-            this.TextBox.Location = new System.Drawing.Point(355, 93);
+            this.TextBox.Location = new System.Drawing.Point(293, 93);
             this.TextBox.Name = "TextBox";
             this.TextBox.Size = new System.Drawing.Size(100, 20);
             this.TextBox.TabIndex = 2;
+            // 
+            // CityButton
+            // 
+            this.CityButton.Location = new System.Drawing.Point(443, 90);
+            this.CityButton.Name = "CityButton";
+            this.CityButton.Size = new System.Drawing.Size(75, 23);
+            this.CityButton.TabIndex = 3;
+            this.CityButton.Text = "Get City";
+            this.CityButton.UseVisualStyleBackColor = true;
+            this.CityButton.Click += new System.EventHandler(this.CityButton_Click);
+            // 
+            // ClearCache
+            // 
+            this.ClearCache.Location = new System.Drawing.Point(308, 45);
+            this.ClearCache.Name = "ClearCache";
+            this.ClearCache.Size = new System.Drawing.Size(75, 23);
+            this.ClearCache.TabIndex = 4;
+            this.ClearCache.Text = "Clear Cache";
+            this.ClearCache.UseVisualStyleBackColor = true;
+            this.ClearCache.Click += new System.EventHandler(this.ClearCache_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 546);
+            this.Controls.Add(this.ClearCache);
+            this.Controls.Add(this.CityButton);
             this.Controls.Add(this.TextBox);
             this.Controls.Add(this.ListBox);
             this.Controls.Add(this.SearchButton);
@@ -78,6 +102,8 @@
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.ListBox ListBox;
         private System.Windows.Forms.TextBox TextBox;
+        private System.Windows.Forms.Button CityButton;
+        private System.Windows.Forms.Button ClearCache;
     }
 }
 
